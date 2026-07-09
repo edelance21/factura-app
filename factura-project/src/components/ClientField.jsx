@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ClientField = ({ clientName, errors, onClientNameChange, clientDoc, onClientDocChange, clientNfc }) => {
+const ClientField = ({ clientName, errors, onClientNameChange,  clientDoc, onClientDocChange, clientNcf, onClientNcfChange }) => {
   return (
-    <setcion>
+    <section>
         <h2 className='text-lg font-medium text-white sm:text-xl'>Datos del cliente</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
             <div>
@@ -42,13 +42,13 @@ const ClientField = ({ clientName, errors, onClientNameChange, clientDoc, onClie
             </div>
             <div>
             {/* COMPROBANTE FISCAL */}
-            <label htmlFor='client-nfc' className='mb-2 block text-sm font-medium text-slate-200'>
+            <label htmlFor='client-ncf' className='mb-2 block text-sm font-medium text-slate-200'>
                 NCF
             </label>
             <input
-                id='client-nfc'
+                id='client-ncf'
                 type='text'
-                value={clientNfc}
+                value={clientNcf}
                 maxLength={11}
                 onChange={(event) => 
                     onClientNcfChange(event.target.value)
@@ -60,7 +60,7 @@ const ClientField = ({ clientName, errors, onClientNameChange, clientDoc, onClie
             {errors.clientNcf ? <p className="mt-2 text-xs text-red-400">{errors.clientNcf}</p> : null}
             </div>
         </div>
-    </setcion>
+    </section>
   )
 }
 

@@ -3,6 +3,7 @@ import ClientField from '../components/ClientField'
 import ProductsTable from '../components/ProductsTable';
 import { useInvoiceForm } from '../hooks/useInvoiceForm';
 import InvoiceSummary from '../components/InvoiceSummary';
+import InvoiceView from '../components/InvoiceView';
 
 
 
@@ -34,6 +35,11 @@ const HomePage = () => {
   return (
     <section className='flex flex-1 justify-center py-6 sm:py-10'>
         <div className="w-full max-w-6xl">
+
+            {/* Si ya se generó la factura mostramos la vista de factura, si no mostramos el formulario */}
+            {invoice ? (
+                <InvoiceView invoice={invoice} onNewInvoice={handleNewInvoice} />
+            ) : (
             <>  
                 <header className="mb-6 sm:mb-8">
                     <h1>Generador de facturas</h1>
@@ -48,11 +54,11 @@ const HomePage = () => {
                 <ClientField
                     clientName={clientName}
                     clientDoc={clientDoc}
-                    clientNfc={clientNcf}
+                    clientNcf={clientNcf}
                     errors={errors}
                     onClientNameChange={handleClientNameChange}
-                    onClientDocName={handleClientDocChange}
-                    onClientNcfName={handleClientNcfChange}
+                    onClientDocChange={handleClientDocChange}
+                    onClientNcfChange={handleClientNcfChange}
                 />
                 {/* TABLA DE PRODUCTOS */}
                 <ProductsTable
@@ -86,6 +92,7 @@ const HomePage = () => {
                 </div>
                 </form>
             </>
+            )}
         </div>
     </section>
   )
