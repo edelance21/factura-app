@@ -43,7 +43,7 @@ const HomePage = () => {
                 <form 
                     onSubmit={handleSubmit} 
                     className='rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-2xl shadow-slate-950/40 backdrop-blur sm:p-8'
-                />
+                >
                 {/* Cliente */}
                 <ClientField
                     clientName={clientName}
@@ -73,7 +73,18 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-
+                {/* BOTON PARA ENVIAR EL FORMULARIO */}
+                <div>
+                    <button
+                        type='submit'
+                        className='inline-flex items-center rounded-xl border border-cyan-400/300 
+                        bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300 cursor-pointer 
+                        transition hover:bg-cyan-400/20 focus:outline-none focus:ring-2 focus:ring-cyan-400/50'
+                    >
+                        Enviar factura
+                    </button>
+                </div>
+                </form>
             </>
         </div>
     </section>
