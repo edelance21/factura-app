@@ -1,5 +1,5 @@
 
-import { calculateSubtotal } from '../utils/invoiceCalculations'
+import { calculateProductSubtotal } from '../utils/invoiceCalculations'
 import { currencyFormatter } from '../utils/formatters'
 
 //TOTAL DE NUMERO DE COLUMNAS
@@ -94,7 +94,7 @@ const ProductsTable = ({ products, errors, onProductChange, onProductBlur, onAdd
                             <button
                                 type="button"
                                 onClick={() => onRemoveProduct(product.id)}
-                                className="inline-flex items-center rounded-xl border border-rose-400/30 bg-rose-400/10 px-4 py-2 text-sm font-medium text-rose-300 transition hover:bg-rose-400/20 focus:outline-none focus:ring-2 focus:ring-rose-400/50"
+                                className="cursor-pointer inline-flex items-center rounded-xl border border-rose-400/30 bg-rose-400/10 px-4 py-2 text-sm font-medium text-rose-300 transition hover:bg-rose-400/20 focus:outline-none focus:ring-2 focus:ring-rose-400/50"
                         >
                           Eliminar
                         </button>
@@ -109,8 +109,13 @@ const ProductsTable = ({ products, errors, onProductChange, onProductBlur, onAdd
         </div>
             {/* BOTON PARA AGREGAR FILA */}
             <button
+                type='button'
+                onClick={onAddProduct}
+                className='mt-4 inline-flex items-center border rounded-xl border-emerald-400/30
+                bg-emerald-400/10 px4 py-2.5 text-sm font-medium text-emerald-300 transition 
+                hover:bg-emerald-400/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50'
             >
-                Agregar Producto                
+                Agregar Procuto             
             </button>
         
     </section>

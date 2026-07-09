@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ClientField from '../components/ClientField'
 import ProductsTable from '../components/ProductsTable';
+import { useInvoiceForm } from '../hooks/useInvoiceForm';
+
 
 
 const HomePage = () => {
@@ -43,10 +45,12 @@ const HomePage = () => {
                 {/* Cliente */}
                 <ClientField
                     clientName={clientName}
+                    clientDoc={clientDoc}
+                    clientNfc={clientNcf}
                     errors={errors}
-                    onClientNameChange={setClientName}
-                    onClientDocName={handleClientDocName}
-                    onClientNcfName={handleClientNcfName}
+                    onClientNameChange={handleClientNameChange}
+                    onClientDocName={handleClientDocChange}
+                    onClientNcfName={handleClientNcfChange}
                 />
                 {/* TABLA DE PRODUCTOS */}
                 <ProductsTable
