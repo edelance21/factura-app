@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import ClientField from '../components/ClientField'
 import ProductsTable from '../components/ProductsTable';
 import { useInvoiceForm } from '../hooks/useInvoiceForm';
+import InvoiceSummary from '../components/InvoiceSummary';
+
 
 
 
@@ -61,6 +63,16 @@ const HomePage = () => {
                     onAddProduct={handleAddProduct}
                     onRemoveProduct={handleRemoveProduct}
                 />
+
+                {/* CAJA DE RESUMEN QUE CONTIENE SUBTOTAL, ITBIS Y TOTAL */}
+                <section className='mt-6 flex justify-end'>
+                    <div>
+                        <h3>Resumen</h3>
+                        <div>
+                            <InvoiceSummary/>
+                        </div>
+                    </div>
+                </section>
 
             </>
         </div>
