@@ -69,7 +69,7 @@ const HomePage = () => {
                     <div>
                         <h3>Resumen</h3>
                         <div>
-                            <InvoiceSummary/>
+                            <InvoiceSummary subtotal={subtotal} itbis={itbis} total={total} />
                         </div>
                     </div>
                 </section>
