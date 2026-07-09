@@ -1,15 +1,30 @@
 import React, { useState } from 'react'
 import ClientField from '../components/ClientField'
+import ProductsTable from '../components/ProductsTable';
 
 
+const HomePage = () => {
 
-const HomePage = ({ handleSubmit }) => {
-
-    const [clientName, setClientName] = useState("");
-    const [errors, setErrors] = useState({});
-    const [handleClientName, sethandleClientName] = useState("")
-    const [handleClientDocName, sethandleClientDocName] = useState("")
-    const [handleClientNcfName, sethandleClientNcfName] = useState("")
+    const {
+    clientName,       // nombre del cliente escrito en el formulario
+    clientDoc,        // RNC o cédula del cliente
+    clientNcf,        // número de comprobante fiscal
+    products,         // lista de productos agregados
+    invoice,          // factura generada (null si aún no se envió)
+    errors,           // errores de validación de cada campo
+    subtotal,         // suma de todos los productos sin impuesto
+    itbis,            // impuesto calculado (18%)
+    total,            // subtotal + itbis
+    handleProductChange,      // actualiza un campo de un producto
+    handleProductBlur,        // normaliza la cantidad al salir del input
+    handleAddProduct,         // agrega una fila nueva a la tabla
+    handleRemoveProduct,      // elimina un producto de la lista
+    handleClientNameChange,   // actualiza el nombre del cliente
+    handleClientDocChange,    // actualiza el documento del cliente
+    handleClientNcfChange,    // actualiza el NCF del cliente
+    handleNewInvoice,         // limpia todo para hacer una factura nueva
+    handleSubmit,             // valida y genera la factura
+  } = useInvoiceForm()
 
     
   return (
@@ -27,14 +42,22 @@ const HomePage = ({ handleSubmit }) => {
                 />
                 {/* Cliente */}
                 <ClientField
-                clientName={clientName}
-                errors={errors}
-                onClientNameChange={setClientName}
-                onClientDocName={handleClientDocName}
-                onClientNcfName={handleClientNcfName}
+                    clientName={clientName}
+                    errors={errors}
+                    onClientNameChange={setClientName}
+                    onClientDocName={handleClientDocName}
+                    onClientNcfName={handleClientNcfName}
                 />
-                {/* TABLA EDITABLE */}
-                
+                {/* TABLA DE PRODUCTOS */}
+                <ProductsTable
+                    products={products}
+                    errors={errors}
+                    onProductChange={handleProductChange}
+                    onProductBlur={handleProductBlur}
+                    onAddProduct={handleAddProduct}
+                    onRemoveProduct={handleRemoveProduct}
+                />
+
             </>
         </div>
     </section>
