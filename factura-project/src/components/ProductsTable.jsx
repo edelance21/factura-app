@@ -112,10 +112,10 @@ const ProductsTable = ({ products, errors, onProductChange, onProductBlur, onAdd
                 type='button'
                 onClick={onAddProduct}
                 className='mt-4 inline-flex items-center border rounded-xl border-emerald-400/30
-                bg-emerald-400/10 px4 py-2.5 text-sm font-medium text-emerald-300 transition 
+                bg-emerald-400/10 px4 py-2 text-sm font-medium text-emerald-300 transition 
                 hover:bg-emerald-400/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50'
             >
-                Agregar Procuto             
+                Agregar Producto             
             </button>
         
     </section>
