@@ -42,7 +42,7 @@ const HomePage = () => {
             ) : (
             <>  
                 <header className="mb-6 sm:mb-8">
-                    <h1>Generador de facturas</h1>
+                    <h1 className='text-3xl font-semibold tracking-tight text-white sm:text-4xl'>Generador de facturas</h1>
                 </header>
 
                 {/* FORMULARIO PRINCIPAL */}
