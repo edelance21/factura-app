@@ -71,16 +71,17 @@ const HomePage = () => {
                 />
 
                 {/* CAJA DE RESUMEN QUE CONTIENE SUBTOTAL, ITBIS Y TOTAL */}
-                <section className='mt-6 flex justify-end'>
-                    <div>
-                        <h3>Resumen</h3>
-                        <div>
+                <section className='mt-8 flex justify-end'>
+                    <div className='w-full max-w-xs border rounded-2xl border-slate-800 bg-slate-950
+                    sm:p-5'>
+                        <h3 className='text-base font-medium text-white'>Resumen</h3>
+                        <div className='mt-4'>
                             <InvoiceSummary subtotal={subtotal} itbis={itbis} total={total} />
                         </div>
                     </div>
                 </section>
                 {/* BOTON PARA ENVIAR EL FORMULARIO */}
-                <div>
+                <div className='mt-6 flex justify-end'>
                     <button
                         type='submit'
                         className='inline-flex items-center rounded-xl border border-cyan-400/300 

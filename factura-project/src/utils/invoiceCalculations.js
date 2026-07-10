@@ -42,7 +42,7 @@ export function calculateProductSubtotal(product) {
 // Suma los subtotales de todos los productos para obtener el subtotal general
 export function calculateSubtotal(products) {
     return roundToTwoDecimal (
-        products.reduce((accumulator, product) => + calculateProductSubtotal(product), 0),
+        products.reduce((accumulator, product) => accumulator + calculateProductSubtotal(product), 0),
     )
 }
 
