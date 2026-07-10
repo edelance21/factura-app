@@ -5,6 +5,9 @@ import InvoiceSummary from "./InvoiceSummary";
 import React from 'react'
 
 const InvoiceView = ({ invoice, onNewInvoice }) => {
+
+    const { clientName, clientDoc, clientNcf, products, subtotal, itbis, total, date } = invoice
+
   return (
     <div className="w-full max-w-6xl">
       {/* Encabezado con título y botones de acción */}
